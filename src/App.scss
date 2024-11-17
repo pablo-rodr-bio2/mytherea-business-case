@@ -1,10 +1,17 @@
-$primary-color: #3498db;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-.app {
-  text-align: center;
-  color: $primary-color;
+body, html, #root {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
 
-  h1 {
-    font-size: 2rem;
-  }
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2rem;
 }

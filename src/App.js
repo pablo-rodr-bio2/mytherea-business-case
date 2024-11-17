@@ -1,9 +1,12 @@
 import React from 'react';
+import Header from './components/Header/Header';
+import CarouselContainer from './components/CarouselContainer/CarouselContainer';
 
 const App = () => {
   return (
-    <div className="app">
-      <h1>Hello, MYTHERESA spa project!</h1>
+    <div className="App">
+      <Header />
+      <CarouselContainer />
     </div>
   );
 };
