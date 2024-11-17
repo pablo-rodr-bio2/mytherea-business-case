@@ -5,7 +5,13 @@ import './Header.scss'
 const Header = () => {
   return (
     <header className="header">
-      <h1>SPA Header</h1>
+      <h2>
+        <a href="/movies">Movie App</a>
+      </h2>
+
+      <h2>
+        <a href="/wishlist">Wishlist</a>
+      </h2>
     </header>
   )
 }
