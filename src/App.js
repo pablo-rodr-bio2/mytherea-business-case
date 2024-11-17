@@ -1,12 +1,14 @@
 import React from 'react';
+
 import Header from './components/Header/Header';
-import CarouselContainer from './components/CarouselContainer/CarouselContainer';
+import './App.scss';
+import { Outlet } from 'react-router-dom';
 
 const App = () => {
   return (
     <div className="App">
       <Header />
-      <CarouselContainer />
+      <Outlet />
     </div>
   );
 };
