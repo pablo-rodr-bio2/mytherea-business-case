@@ -19,7 +19,7 @@ const Carousel = ({ movies, loading, error }) => {
 
       <div className="movies">
         {movies && movies.slice(0,3).map(movie => (
-          <div className='movie'>
+          <div className='movie' key={movie.imdbID}>
             <Link to={`/movies/${movie.imdbID}`}>
               <img className='carousel-img' src={movie.Poster} alt={movie.Title} /> 
             </Link>
