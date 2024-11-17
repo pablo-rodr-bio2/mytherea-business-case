@@ -12,7 +12,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Navigate to="/movies" replace={true} />
+        element: <Navigate to="/movies" replace />
       },
       {
         path: "/movies",
