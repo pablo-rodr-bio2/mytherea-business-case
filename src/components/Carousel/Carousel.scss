@@ -1,8 +1,17 @@
 .carousel {
-  flex-grow: 1;
   border: 2px solid black;
   display: flex;
+  gap: 1rem;
   align-items: center;
   justify-content: center;
+  flex-grow: 1;
   background-color: #e0e0e0;
+  overflow: hidden; 
+  padding: 1rem;
+}
+
+.carousel img {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
 }

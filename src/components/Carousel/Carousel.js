@@ -13,11 +13,11 @@ const Carousel = ({ movies, loading, error }) => {
   
   return (
     <section className="carousel">
+      <div>Previous</div>
       {movies && movies.slice(0,3).map(movie => (
-        <div key={movie.imdbID} className="movie">
-          <img src={movie.Poster} alt={movie.Title} />
-        </div>
+        <img src={movie.Poster} alt={movie.Title} /> 
       ))}
+      <div>Next</div>
     </section>
   )
 }
