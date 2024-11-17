@@ -3,6 +3,7 @@ import React from 'react'
 import './Carousel.scss'
 import { Link } from 'react-router-dom'
 
+//TODO: fix movil view, images are too big
 const Carousel = ({ movies, loading, error }) => {
   if (loading) {
     return <div>Loading...</div>
@@ -14,20 +15,19 @@ const Carousel = ({ movies, loading, error }) => {
   
   return (
     <section className="carousel">
-      <div className='carousel-button'>Previous</div>
+      <button className='carousel-button'>Previous</button>
 
       <div className="movies">
         {movies && movies.slice(0,3).map(movie => (
           <div className='movie'>
             <Link to={`/movies/${movie.imdbID}`}>
-              {/* <img className='carousel-img' src={movie.Poster} alt={movie.Title} />  */}
-              <p>{movie.Title}</p>
+              <img className='carousel-img' src={movie.Poster} alt={movie.Title} /> 
             </Link>
           </div>
         ))}
       </div>
 
-      <div className='carousel-button'>Next</div>
+      <button className='carousel-button'>Next</button>
     </section>
   )
 }
