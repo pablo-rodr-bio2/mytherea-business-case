@@ -8,6 +8,18 @@ const MovieDetailsPage = () => {
   const { movieId } = useParams()
   const { loading, error, movieDetails } = useMovieDetails(movieId)
 
+  const handleWishlist = () => {
+    const wishlist = JSON.parse(sessionStorage.getItem('wishlist')) || []
+
+    const isInWishlist = wishlist.some(movie => movie.imdbID === movieDetails.imdbID);
+
+    if(!isInWishlist) {
+      wishlist.push(movieDetails)
+
+      sessionStorage.setItem('wishlist', JSON.stringify(wishlist))
+    }
+  }
+
   if(loading) {
     return <div>Loading...</div>
   }
@@ -19,8 +31,6 @@ const MovieDetailsPage = () => {
   if (!movieDetails) {
     return <div>No details available for this movie.</div>;
   }
-
-  console.log(movieDetails)
 
   return (
     <div className='movie-details-container'>
@@ -34,7 +44,7 @@ const MovieDetailsPage = () => {
           <p>Year: {movieDetails.Year}</p>
           <p>Genre: {movieDetails.Genre}</p>
           <p>Director: {movieDetails.Director}</p>
-          <button>Add to wishlist</button>  
+          <button onClick={handleWishlist}>Add to wishlist</button>  
         </div>
       </div>
 
