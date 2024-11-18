@@ -1,6 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+
 import { useMovieDetails } from '../../hooks/useMovieDetails'
+import './MovieDetailsPage.scss'
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams()
@@ -18,21 +20,31 @@ const MovieDetailsPage = () => {
     return <div>No details available for this movie.</div>;
   }
 
+  console.log(movieDetails)
+
   return (
-    <div>
-      <div>
-        <img src={movieDetails.Poster} alt={movieDetails.Title} />
+    <div className='movie-details-container'>
+      <div className='movie-details-info'>
+        <div className='movie-details-info_img'>
+          <img src={movieDetails.Poster} alt={movieDetails.Title} className='something'/>
+        </div>
+
+        <div className='movie-details-info_data'>
+          <p>Title: {movieDetails.Title}</p>
+          <p>Year: {movieDetails.Year}</p>
+          <p>Genre: {movieDetails.Genre}</p>
+          <p>Director: {movieDetails.Director}</p>
+          <button>Add to wishlist</button>  
+        </div>
       </div>
-      <div>
-        <div>{movieDetails.Title}</div>
-        <div>{movieDetails.plot}</div>
-        <button>Add to wishlist</button>
+
+      <div className='movie-details-add'>
+        <p>{movieDetails.Plot}</p>
+        <p>Actors: {movieDetails.Actors}</p>
+        <p>Rated for: {movieDetails.Rated}</p>
+        <p>Runtime: {movieDetails.Runtime}</p>
       </div>
-      <div>
-        <div>Year: {movieDetails.Year}</div>
-        <div>Director: {movieDetails.Director}</div>
-        <div>Actors: {movieDetails.Actors}</div>
-      </div>
+
     </div>
   )
 }
