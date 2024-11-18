@@ -13,6 +13,8 @@ const Header = () => {
       <h2>
         <Link to="/wishlist">Wishlist</Link>
       </h2>
+
+      <h2><button onClick={() => sessionStorage.clear()}>Reset</button></h2>
     </header>
   )
 }

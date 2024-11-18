@@ -11,6 +11,8 @@ const CarouselContainer = () => {
 
   const movies = [firstCarouselMovies, secondCarouselMovies, thirdCarouselMovies];
 
+  const isLoading = movies.some(movie => movie.loading);
+
   return (
     <div className="carousels-container">
       {movies.map((movie, index) => (
