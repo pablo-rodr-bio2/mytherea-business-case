@@ -23,12 +23,16 @@ const Carousel = ({ category }) => {
     }
   }
 
-  if (loading || !movies) {
+  if (loading) {
     return <div>Loading...</div>
   }
 
   if(error) {
     return <div>Error: {error.message}</div>
+  }
+
+  if(!movies || movies.length === 0) {
+    return <div>No movies in this category</div>
   }
 
   const carrouselMovies = movies.slice(index, index + 3);
