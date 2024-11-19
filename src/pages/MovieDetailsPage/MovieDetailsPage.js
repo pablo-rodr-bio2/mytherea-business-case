@@ -15,7 +15,12 @@ const MovieDetailsPage = () => {
     const isInWishlist = wishlist.some(movie => movie.imdbID === movieDetails.imdbID);
 
     if(!isInWishlist) {
-      wishlist.push(movieDetails)
+      const newWishlistMovie = {
+        ...movieDetails,
+        category: category
+      }
+
+      wishlist.push(newWishlistMovie)
 
       sessionStorage.setItem('wishlist', JSON.stringify(wishlist))
       setAddedWishlist(true)

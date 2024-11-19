@@ -13,7 +13,7 @@ const WishlistContainer = ({ wishlist }) => {
       {wishlist.map((movie, index) => (
         <li key={movie.imdbID}>
           <Link 
-            to={`/movies/${movie.imdbID}`} 
+            to={`/movies/${movie.category}/${movie.imdbID}`} 
             className='wishlist-link'
           >
             {index}. {movie.Title}
