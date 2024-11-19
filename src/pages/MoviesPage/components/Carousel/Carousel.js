@@ -3,9 +3,11 @@ import React, { useState } from 'react'
 import './Carousel.scss'
 import CarouselButton from '../CarouselButton/CarouselButton';
 import CarouselLink from '../CarouselLink/CarouselLink';
+import { useMovies } from '../../../../hooks/useMovies';
 
-const Carousel = ({ movies, loading, error, category }) => {
+const Carousel = ({ category }) => {
   const [ index, setIndex ] = useState(0);
+  const { loading, error, movies } = useMovies(category);
 
   const handleNext = () => {
     const newIndex = index + 3;
