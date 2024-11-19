@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import './WishlistPage.scss'
+
 const WishlistPage = () => {
   const wishlist = JSON.parse(sessionStorage.getItem('wishlist')) || []
 
@@ -9,12 +11,15 @@ const WishlistPage = () => {
   }
 
   return (
-    <div>
+    <div className='wishlist-container'>
       <h1>Wishlist</h1>
-      <ul>
+      <ul className='wishlist-list'>
         {wishlist.map(movie => (
           <li key={movie.imdbID}>
-            <Link to={`/movies/${movie.imdbID}`}>
+            <Link 
+              to={`/movies/${movie.imdbID}`} 
+              className='wishlist-link'
+            >
               {movie.Title}
             </Link>
           </li>
