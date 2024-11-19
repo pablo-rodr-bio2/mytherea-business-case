@@ -44,7 +44,7 @@ const MovieDetailsPage = () => {
           <p>Year: {movieDetails.Year}</p>
           <p>Genre: {movieDetails.Genre}</p>
           <p>Director: {movieDetails.Director}</p>
-          <button onClick={handleWishlist}>Add to wishlist</button>  
+          <button onClick={handleWishlist} className='movie-details-info_btn'>Add to wishlist</button>  
         </div>
       </div>
 
