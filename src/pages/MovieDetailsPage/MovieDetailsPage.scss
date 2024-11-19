@@ -1,3 +1,10 @@
+@import url('https://fonts.cdnfonts.com/css/batman-forever');
+@import url('https://fonts.cdnfonts.com/css/terminator-2');
+@font-face {
+  font-family: 'Saiyan-Sans';
+  src: url('../../assets/fonts/Saiyan-Sans.ttf') format('truetype');
+}
+
 .movie-details-container {
   display: flex;
   flex-direction: column;
@@ -25,6 +32,10 @@
   gap: 1rem;
 }
 
+.movie-details-add p:first-of-type {
+  font-style: italic;
+}
+
 .movie-details-info_img {
   border: 2px solid black;
   display: flex;
@@ -48,7 +59,7 @@
   flex: 1;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 0.5rem;
   gap: 1rem;
 }
@@ -59,4 +70,26 @@
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  font-weight: 800;
+}
+
+.batman-style {
+  font-family: 'BatmanForeverAlternate', sans-serif;
+  button {
+    background-color: yellow;
+  }
+}
+
+.terminator-style {
+  font-family: 'Terminator', sans-serif;
+  button {
+    background-color: rgba(230, 82, 82, 0.733);
+  }
+}
+
+.dragon_ball-style {
+  font-family: 'Saiyan-Sans', sans-serif;
+  button {
+    background-color: orange;
+  }
 }

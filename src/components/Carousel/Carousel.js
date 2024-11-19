@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import './Carousel.scss'
 import { Link } from 'react-router-dom'
 
-const Carousel = ({ movies, loading, error }) => {
+const Carousel = ({ movies, loading, error, category }) => {
   const [ index, setIndex ] = useState(0);
 
   const handleNext = () => {
@@ -37,7 +37,7 @@ const Carousel = ({ movies, loading, error }) => {
       <div className="movies">
         {movies && carrouselMovies.map(movie => (
           <div className='movie' key={movie.imdbID}>
-            <Link to={`/movies/${movie.imdbID}`}>
+            <Link to={`/movies/${category}/${movie.imdbID}`}>
               <img className='carousel-img' src={movie.Poster} alt={movie.Title} /> 
             </Link>
           </div>
