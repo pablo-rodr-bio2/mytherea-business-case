@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-
-const API_KEY = '22f2e2de';
+import { API_KEY } from "../constants/api_key";
 
 const getMovieDetails = async (movieId) => {
   const response = await fetch(`http://www.omdbapi.com/?i=${movieId}&apikey=${API_KEY}`);
