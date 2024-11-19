@@ -1,0 +1,17 @@
+.carousel {
+  border: 2px solid black;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e0e0e0;
+  overflow: hidden; 
+  padding: 1rem;
+}
+
+.carousel-movies {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  height: 100%;
+}

@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 
 import './Carousel.scss'
-import { Link } from 'react-router-dom'
+import CarouselButton from '../CarouselButton/CarouselButton';
+import CarouselLink from '../CarouselLink/CarouselLink';
 
 const Carousel = ({ movies, loading, error, category }) => {
   const [ index, setIndex ] = useState(0);
@@ -32,19 +33,20 @@ const Carousel = ({ movies, loading, error, category }) => {
   
   return (
     <section className="carousel">
-      <button className='carousel-button' onClick={handlePrevious}>Previous</button>
+      <CarouselButton text='Previous' handleClick={handlePrevious} />
 
-      <div className="movies">
+      <div className="carousel-movies">
         {movies && carrouselMovies.map(movie => (
-          <div className='movie' key={movie.imdbID}>
-            <Link to={`/movies/${category}/${movie.imdbID}`}>
-              <img className='carousel-img' src={movie.Poster} alt={movie.Title} /> 
-            </Link>
-          </div>
+          <CarouselLink 
+            id={movie.imdbID} 
+            category={category} 
+            poster={movie.Poster} 
+            title={movie.Title} 
+          />
         ))}
       </div>
 
-      <button className='carousel-button' onClick={handleNext}>Next</button>
+      <CarouselButton text='Next' handleClick={handleNext} />
     </section>
   )
 }

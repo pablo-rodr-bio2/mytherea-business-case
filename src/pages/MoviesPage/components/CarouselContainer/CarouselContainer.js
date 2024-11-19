@@ -2,8 +2,8 @@ import React from 'react'
 
 import Carousel from '../Carousel/Carousel'
 import './CarouselContainer.scss'
-import { useMovies } from '../../hooks/useMovies'
-import { CATEGORIES } from '../../constants/categories'
+import { useMovies } from '../../../../hooks/useMovies';
+import { CATEGORIES } from '../../../../constants/categories';
 
 const CarouselContainer = () => {
   const firstCarouselMovies = useMovies(CATEGORIES[0]);

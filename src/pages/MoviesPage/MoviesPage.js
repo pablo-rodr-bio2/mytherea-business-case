@@ -1,5 +1,5 @@
 import React from 'react'
-import CarouselContainer from '../../components/CarouselContainer/CarouselContainer'
+import CarouselContainer from './components/CarouselContainer/CarouselContainer'
 
 const MoviesPage = () => {
   return (
