@@ -37,7 +37,8 @@ const Carousel = ({ movies, loading, error, category }) => {
 
       <div className="carousel-movies">
         {movies && carrouselMovies.map(movie => (
-          <CarouselLink 
+          <CarouselLink
+            key={movie.imdbID} 
             id={movie.imdbID} 
             category={category} 
             poster={movie.Poster} 
