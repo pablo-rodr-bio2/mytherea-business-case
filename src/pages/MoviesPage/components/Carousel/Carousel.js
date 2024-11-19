@@ -39,7 +39,7 @@ const Carousel = ({ category }) => {
   
   return (
     <section className="carousel">
-      <CarouselButton text='Previous' handleClick={handlePrevious} />
+      <CarouselButton text='<<' handleClick={handlePrevious} />
 
       <div className="carousel-movies">
         {movies && carrouselMovies.map(movie => (
@@ -53,7 +53,7 @@ const Carousel = ({ category }) => {
         ))}
       </div>
 
-      <CarouselButton text='Next' handleClick={handleNext} />
+      <CarouselButton text='>>' handleClick={handleNext} />
     </section>
   )
 }
